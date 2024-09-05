@@ -7,7 +7,8 @@ from flask_wtf.csrf import CSRFProtect
 
 #define app
 app= Flask(__name__)
-app.config['SECRET_KEY'] = "nelogirl"
+import os
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 app.config["SESSION_PERMANENT"] = False
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=30)
 app.config["SESSION_TYPE"] = "filesystem"
