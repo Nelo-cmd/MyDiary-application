@@ -1,0 +1,20 @@
+{%extends "base.html"%}
+
+<title>{%block title%}
+        {%endblock%}</title>
+<div></div>
+<body>
+        {%block content%}
+
+        <h3>
+                This is basically a personal Diary
+        </h3> 
+        <div class = "image">
+                <img  src =../static/animepic.jpg>
+        </div>
+        <div>
+                <a class="link-button" href="{{url_for('auth.sign_up')}}">Sign up!</a>
+        </div>
+
+        {%endblock%}
+</body>
