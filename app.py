@@ -18,10 +18,10 @@ csrf = CSRFProtect(app)
 #cursor.execute("CREATE TABLE randomtable(myname,yourname)")
 #register auth and views blueprints
 from auth import auth
-app.register_blueprint(auth, url_prefix = "/")
+app.register_blueprint(auth, url_prefix = "/Diary/")
 
 from views import views
-app.register_blueprint(views, url_prefix = "/")
+app.register_blueprint(views, url_prefix = "/Diary/")
 
 
 #run app
