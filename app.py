@@ -4,9 +4,8 @@ from flask_session import Session
 from datetime import timedelta
 from flask_wtf.csrf import CSRFProtect
 
-
 #define app
-app= Flask(__name__)
+app = Flask(__name__)
 import os
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 app.config["SESSION_PERMANENT"] = False
@@ -14,18 +13,18 @@ app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=30)
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 csrf = CSRFProtect(app)
-
-#cursor.execute("CREATE TABLE randomtable(myname,yourname)")
-#register auth and views blueprints
+prefix = '/diary'
+# Register auth blueprint with /diary prefix
 from auth import auth
-app.register_blueprint(auth, url_prefix = "/Diary/")
+app.register_blueprint(auth, url_prefix= prefix)
 
+# Register views blueprint with /diary prefix
 from views import views
-app.register_blueprint(views, url_prefix = "/Diary/")
+app.register_blueprint(views, url_prefix= prefix )
 
+# Print available routes
+print(app.url_map)
 
-#run app
+# Run app
 if __name__ == "__main__":
-    app.run(host= '0.0.0.0', port= 7000,  debug = True)
-
-
+    app.run(host='0.0.0.0', port=5000, debug=True)
