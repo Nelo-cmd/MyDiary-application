@@ -23,7 +23,7 @@ from views import views
 app.register_blueprint(views, url_prefix= prefix )
 
 # Print available routes
-print(app.url_map)
+#print(app.url_map)
 
 # Run app
 if __name__ == "__main__":

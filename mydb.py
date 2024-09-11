@@ -1,13 +1,14 @@
 #import connector
 import mysql.connector
+import os
 
 #create connection function
 def connect_db():
 
-    #se the mysql connector to connect to your database
-    mydb = mysql.connector.connect(host = "localhost",
+    #set the mysql connector to connect to your database
+    mydb = mysql.connector.connect(host = "154.118.10.84",
                                    user = "root",
-                                   password = "2Nddirection@",
+                                   password = os.getenv('SECRET_KEY'),
                                    database = "diarydb")
     
     #check if database is connected
