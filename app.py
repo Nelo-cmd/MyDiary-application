@@ -9,6 +9,8 @@ app = Flask(__name__)
 import os
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 app.config["SESSION_PERMANENT"] = False
+app.config['SESSION_COOKIE_SECURE'] = True
+app.config['WTF_CSRF_SSL_STRICT'] = False
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=30)
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
