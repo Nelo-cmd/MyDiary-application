@@ -13,7 +13,7 @@
 
     <h4>You'll have to log in first though.. </h4> 
     <br><br>
-    <form method= "POST">
+    <form method= "POST" action="{{url_for('auth.sign_up')}}">
         {{ form.hidden_tag() }}
         <div class = form>
             {{form.username.label}}

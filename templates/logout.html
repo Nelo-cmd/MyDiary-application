@@ -9,7 +9,7 @@
     {% endblock %}
 
     {% block content %}
-    <form id="logoutform" method="POST">
+    <form id="logoutform" method="POST" action="{{url_for('auth.logout')}}">
         {{ form.hidden_tag() }}
 
         <div class="form">
