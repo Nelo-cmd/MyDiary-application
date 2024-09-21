@@ -10,21 +10,26 @@
             {%block title%}
             {%endblock%}
         </title>
-        <link rel="stylesheet" type="text/css" href="../static/style.css" ></link>
-        <div>
-        
-            <ul class="nav">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}?v=1.0" ></link>
+        <nav>
+            <ul class="navlist">
+                <div class="logo-container">
+                    <li class="nav-item"></li>
+                    <a class="nav-link" href="{{ url_for('views.homepage') }}"><img src="{{url_for('static', filename = 'Logo image.jpg')}}" alt="websites logo"></a>
+                    </li>
+                </div>
+                
                 <li class="nav-item">
-                <a class="nav-link" aria-current="page" href='{{url_for("auth.sign_up")}}'>Sign up</a>
+                    <a class="nav-link" aria-current="page" href='{{url_for("auth.sign_up")}}'>Sign up</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href='{{url_for("auth.login_with_username")}}'>Log in</a>
+                    <a class="nav-link" href='{{url_for("auth.login_with_username")}}'>Log in</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="{{url_for('views.posts')}}">Posted secrets</a>
+                    <a class="nav-link" href="{{url_for('views.posts')}}">Posted secrets</a>
                 </li>
             </ul>
-        </div>
+        </nav>
   </head>
   <body>
     {% with messages = get_flashed_messages(with_categories=true) %}
