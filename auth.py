@@ -7,6 +7,7 @@ import os,base64
 #define auth blueprint
 auth = Blueprint("auth",__name__)
 
+
 @auth.before_request
 def make_session_permanent():
     session.permanent = True  # Make the session use the PERMANENT_SESSION_LIFETIME
@@ -48,7 +49,12 @@ def sign_up():
 @auth.route("/loginusername", methods = ['GET', "POST"])
 def login_with_username():
     form = Loginform() #define login form
+    
     if request.method == "POST" and form.validate_on_submit():
+        csrf_token = session.get('_csrf_token')
+        print("CSRF Token (Backend):", csrf_token)
+
+        print("home post")
         try:
             session.pop("user_id")#remove any user id in session
         except KeyError:

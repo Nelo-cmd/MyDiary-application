@@ -9,12 +9,14 @@ app = Flask(__name__)
 import os
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 app.config["SESSION_PERMANENT"] = False
-app.config['SESSION_COOKIE_SECURE'] = True
+app.config['SESSION_COOKIE_SECURE'] = False
 app.config['WTF_CSRF_SSL_STRICT'] = False
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=30)
 app.config["SESSION_TYPE"] = "filesystem"
+csrf = CSRFProtect(app)
 Session(app)
 prefix = '/diary'
+
 # Register auth blueprint with /diary prefix
 from auth import auth
 app.register_blueprint(auth, url_prefix= prefix)

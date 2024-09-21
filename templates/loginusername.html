@@ -10,6 +10,7 @@
     <h4>You'll have to log in first though.. </h4> 
     <br>
     <form method= "POST" action="{{url_for('auth.login_with_username')}}">
+        {{ form.csrf_token }}
         {{ form.hidden_tag() }}
         <div class = form>
             {{form.username.label}}
