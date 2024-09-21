@@ -6,7 +6,7 @@ import os
 def connect_db():
 
     #set the mysql connector to connect to your database
-    mydb = mysql.connector.connect(host = "105.113.76.119",
+    mydb = mysql.connector.connect(host = "diarydb-2.c328y0qm82x3.us-west-2.rds.amazonaws.com",
                                    user = "root",
                                    password = os.getenv('SECRET_KEY'),
                                    database = "diarydb")
