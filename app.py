@@ -13,7 +13,6 @@ app.config['SESSION_COOKIE_SECURE'] = True
 app.config['WTF_CSRF_SSL_STRICT'] = False
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=30)
 app.config["SESSION_TYPE"] = "filesystem"
-csrf = CSRFProtect(app)
 Session(app)
 prefix = '/diary'
 # Register auth blueprint with /diary prefix
