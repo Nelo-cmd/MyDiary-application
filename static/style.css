@@ -1,17 +1,17 @@
 body {
-    background-color: cadetblue;
+    background-color: black;
     text-align: center;
     transition: all;
 }
 
 .nav {
-    background-color: rgb(2, 27, 39);
+    background-color: rgb(238, 37, 70);
     align-content: center;
     display: flex; /* This sets up flexbox on the list container */
-    padding: 0 20px; /* Adds horizontal padding */
+    padding: 0; /* Adds horizontal padding */
     margin: 0; /* Removes default margin */
-    height: 60px; /* Sets the height of the navbar */
-    size: 100px;
+    height: 20%; /* Sets the height of the navbar */
+    size: auto;
 }
 
 .nav li {
@@ -19,7 +19,7 @@ body {
 }
 
 .nav-link {
-    color: white; /* Sets the text color to white */
+    color: rgb(247, 244, 244); /* Sets the text color to white */
     text-decoration: none; /* Removes the underline from links */
     font-size: 16px; /* Increases the font size */
     font-weight: bold; /* Makes the text bold */
@@ -29,7 +29,7 @@ body {
 
 .nav-link:hover{
     font-size: 20px; /* Increases the font size */
-    color: #85c1da;
+    color: #0a0a0a;
 }
 
 @keyframes fadeInOut {
@@ -50,7 +50,7 @@ h3 {
 .link-button{
     display: inline-block; /* Allows the link to have padding and margins */
     padding: 10px 20px; /* Space inside the button */
-    background-color: rgb(2, 27, 39);
+    background-color: rgb(238, 37, 70);
     color: white; /* White text color */
     text-decoration: none; /* Removes the underline */
     font-size: 16px; /* Font size */
@@ -63,7 +63,7 @@ h3 {
 }
 
 .link-button:hover {
-    background-color: #85c1da; /* Darker pink on hover */
+    background-color: rgb(204, 16, 3); /* Darker pink on hover */
     transform: translateY(-2px); /* Slightly lift the button on hover */
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
 }
@@ -79,18 +79,18 @@ form {
     flex-direction: column; /* Arrange items vertically */
     align-items: center;
     justify-content:center;
-    height: 80vh; /* Full viewport height */
-    padding: 30px;
+    height: 80%; /* Full viewport height */
+    padding: 20px;
 }
 
 /* Style form container */
 .form {
-    background-color: #008080; /* Teal blue background */
-    padding: 20px;
+    background-color: #fbffff; /* White background */
+    padding: 5%;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 15px;
-    width: 300px;
+    margin-bottom: 5%;
+    width: 80%;
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
     color: #ffffff; /* White text */
 }
@@ -98,13 +98,13 @@ form {
 /* Style for labels and inputs */
 .form label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 3%;
     font-weight: bold;
 }
 
 .form input, .form textarea {
     width: 100%;
-    padding: 10px;
+    padding: 10%;
     margin-bottom: 10px;
     border: none;
     border-radius: 5px;
@@ -122,10 +122,10 @@ form {
 
 /* Style for the submit button */
 .submit-button {
-    background-color: #006666 !important;
+    background-color: rgb(238, 37, 70) !important;
     color: rgb(240, 248, 248) !important;
     padding: 10px 20px !important;
-    border: teal !important;
+    border: rgb(250, 183, 199) !important;
     border-radius: 35px;
     font-size: 25px;
     cursor: pointer;
@@ -136,7 +136,7 @@ form {
 
 /* Hover effect for the submit button */
 .submit-button:hover {
-    background-color: #004c4c; /* Even darker teal on hover */
+    background-color: rgb(224, 2, 2); /* Even darker teal on hover */
     transform: scale(1.1); /* Slightly enlarge on hover */
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
 }
@@ -149,10 +149,10 @@ form {
 
 .flash-message {
     position: relative;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 2%;
+    margin-bottom: 2%;
+    border: 1% solid #ccc;
+    border-radius: 2%;
     background-color: #f9f9f9;
     color: #333;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -194,7 +194,7 @@ form {
     padding: 20px; /* Increase padding for a more spacious look */
     margin: 20px 0; /* Add vertical margin to space out the bubbles */
     border-radius: 25px; /* More rounded corners for a bubble effect */
-    border: 2px solid #b0e0e6; /* Light teal border to complement the bubble */
+    border: 2px solid #f14850; /* Light teal border to complement the bubble */
     position: relative; /* For positioning the tail of the bubble */
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Soft shadow for a floating effect */
     max-width: 600px; /* Limit the width for a compact look */
@@ -220,33 +220,33 @@ form {
 .file-frame {
     display: inline-block; /* Ensures that the entire frame is treated as a single element */
     padding: 10px; /* Space between the image and the frame */
-    background-color: #f0e6d6; /* Light cream color for the frame */
-    border: 8px solid #4f6d7a; /* Dark teal blue border for the frame */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Adds a shadow for depth */
+    background-color: #f7f5f3; /* white color for the frame */
+    border: 3% solid #f82032; /* Dark teal blue border for the frame */
+    box-shadow: 0 4% 8% rgba(0, 0, 0, 0.3); /* Adds a shadow for depth */
     border-radius: 8px; /* Rounds the corners of the frame */
-    height: 300px;
-    width: 200px;
+    height: 25%;
+    width: 20%;
 }
 
 .file-frame img {
     display: block;
     max-width: 100%; /* Ensures the image fits within the frame */
-    border-radius: 4px; /* Slightly rounds the image corners inside the frame */
+    border-radius: 2%; /* Slightly rounds the image corners inside the frame */
 }
 
 
 /* Style for the sub-post section */
 .sub-post {
-    color: #008080; /* Teal color for the subtext */
+    color: rgb(238, 37, 70); /* Teal color for the subtext */
     font-style: italic; /* Italicized for a softer look */
-    font-size: 14px; /* Slightly smaller font for subtext */
-    margin-top: 10px; /* Add space between the post content and subtext */
+    font-size: 4%; /* Slightly smaller font for subtext */
+    margin-top: 5%; /* Add space between the post content and subtext */
 }
 
 
 /* Delete button styling */
 .delete-post-button {
-    background-color: #006d77; /* Teal blue */
+    background-color: rgb(238, 37, 70); /* Teal blue */
     color: white;
     border: none;
     border-radius: 5px;
@@ -258,11 +258,11 @@ form {
 
 /* Hover and active states for the delete button */
 .delete-post-button:hover {
-    background-color: #ff4d4d; /* Red when hovered */
+    background-color: #cf0505; /* Red when hovered */
 }
 
 .delete-post-button:active {
-    background-color: #003d4d; /* Darker blue when clicked */
+    background-color: #4d0004; /* Darker blue when clicked */
     transform: scale(0.95); /* Slightly shrink when clicked */
 }
 
@@ -271,7 +271,7 @@ form {
     position: fixed;
     bottom: 30px; /* Distance from the bottom of the screen */
     right: 40px;  /* Distance from the right of the screen */
-    background-color: teal; /* Button background color */
+    background-color: rgb(238, 37, 70); /* Button background color */
     color: white; /* Button text color */
     padding: 10px 20px; /* Padding around the button text */
     border-radius: 10px; /* Rounded corners */
@@ -280,7 +280,7 @@ form {
     font-size: 25px; /* Font size */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Add shadow for a 3D effect */
     transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-    border: 2px solid #003d4d; /* Dark blue ring around the button */
+    border: 2px solid #e76363; /*pink pastel ring around the button */
 
 }
 
@@ -290,5 +290,5 @@ form {
 }
 
 .fixed-post-button:active {
-    background-color: rgb(1, 37, 39); /* Change color when clicked */
+    background-color: rgb(241, 137, 137); /* Change color when clicked */
 }
