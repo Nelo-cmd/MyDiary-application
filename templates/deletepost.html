@@ -27,7 +27,7 @@
             Confessed by {{ post[5] }} on <em>{{ post[4].strftime('%Y-%m-%d %H:%M:%S') }}</em>
         </div>
     <p>This post will be deleted. Confirm?</p>
-    <form id="deletepostform" method="POST" action="{{ url_for('auth.deletepost') }}">
+    <form id="deletepostform" method="POST" action="{{ url_for('auth.confirm_delete') }}">
         {{ form.hidden_tag() }}
         <input type="hidden" name="post_id" value="{{ post_id }}">
         

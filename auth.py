@@ -119,34 +119,33 @@ def newpost():
 
 @auth.route("/posts/confirmdelete", methods = ["GET","POST"])
 def confirm_delete():
+    form = deletepostform()
+    
     if 'user_id' in session:
+        
+        if request.method == "POST" and form.validate_on_submit():
+            post_id = request.form.get("post_id")
+            deletepost = request.form.get("deletepost")
+            user_id = g.user_id  # Assuming `g.user` contains the logged-in user's ID
+            dbuser_id = getpostuserid(post_id)  # Get the post's user ID from the database
+            if deletepost:
+                if user_id == dbuser_id[0]:  # Check if the current user owns the post
+                    deleteuserpost(post_id)  # Delete the post
+                    flash("Post deleted ;)", category="success")
+                    return redirect(url_for("views.posts"))  # Redirect after deletion
 
-        form = deletepostform()
+                flash("You can't delete a post that isn't yours.", "error")
+                return redirect(url_for("views.posts"))  # Redirect if deletion isn't allowed
+            
+            return redirect(url_for("views.posts"))
+    
         post_id = request.args.get("post_id")  # Get post_id from query string
         post = get_post_id_post(post_id)  # Retrieve the post
         return render_template("deletepost.html", post_id = post_id, post = post, form = form, base64 = base64 )
+    
     flash("you're not logged in.")
     return redirect(url_for("views.homepage"))
         
-
-@auth.route("/posts/deletepost",methods = ['GET', "POST"])
-def deletepost():
-    if 'user_id' in session:
-        post_id = request.form.get("post_id")
-        deletepost = request.form.get("deletepost")
-        user_id = g.user_id  # Assuming `g.user` contains the logged-in user's ID
-        dbuser_id = getpostuserid(post_id)  # Get the post's user ID from the database
-        if deletepost:
-            if user_id == dbuser_id[0]:  # Check if the current user owns the post
-                deleteuserpost(post_id)  # Delete the post
-                flash("Post deleted ;)", category="success")
-                return redirect(url_for("views.posts"))  # Redirect after deletion
-
-            flash("You can't delete a post that isn't yours.", "error")
-            return redirect(url_for("views.posts"))  # Redirect if deletion isn't allowed
-        return redirect(url_for("views.posts"))
-    flash("you're not logged in.")
-    return redirect(url_for("views.homepage"))
 
 @auth.route("/posts/logout", methods = ["GET", "POST"]) #logout route
 def logout():
@@ -156,7 +155,7 @@ def logout():
             confirmlogout = request.form.get('logout')#confirm logout from form
             if confirmlogout :
                 session.pop('user_id')#remove user id from session
-                return redirect(url_for("auth.login_with_username"))
+                return redirect(url_for("views.homepage"))
             flash("Unable to log out.", category= "error")
             return redirect(url_for('views.posts'))
         return render_template("Logout.html", form = form)# display logout form if request method is get

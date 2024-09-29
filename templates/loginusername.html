@@ -8,8 +8,7 @@
 <h3>I see you'd like to share some secrets *wink wink*</h3>          
 
     <h4>You'll have to log in first though.. </h4> 
-    <br>
-    <form method= "POST" action="{{url_for('auth.login_with_username')}}">
+    <form autocomplete method= "POST" action="{{url_for('auth.login_with_username')}}">
         {{ form.csrf_token }}
         {{ form.hidden_tag() }}
         <div class = form>

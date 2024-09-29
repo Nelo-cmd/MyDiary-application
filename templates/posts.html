@@ -25,7 +25,7 @@
                     Confessed by {{ post[5] }} on <em>{{ post[4].strftime('%Y-%m-%d %H:%M:%S') }}</em>
                 </div>
                 <br>
-                <a type="button" class="delete-post-button" href="/posts/confirmdelete?post_id={{post[0]}}">Delete Post</a>
+                <a type="button" class="delete-post-button" href="{{url_for('auth.confirm_delete', post_id=post[0] )}}">Delete Post</a>
             </div>
         {% endfor %}
     {% else %}

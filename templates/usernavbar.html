@@ -9,9 +9,9 @@
             {%endblock%}
         </title>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}?v=1.0" ></link>
-        <div>
+        <nav>
         
-            <ul class="nav">
+            <ul class="navlist">
                 <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="{{url_for('views.posts')}}">Posts</a>
                 </li>
@@ -22,7 +22,7 @@
                 <a class="nav-link" href="{{url_for('auth.logout')}}">Log out</a>
                 </li>
             </ul>
-        </div>
+        </nav>
         {%block head%}
         
         {%endblock%}
